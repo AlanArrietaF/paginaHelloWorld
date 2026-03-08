@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Registro</title>
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f2f5;
+  }
+
+  .register-container {
+    display: flex;
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    min-height: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin: 10px;
+  }
+
+  /* Lado Izquierdo: Imagen */
+  .image-side {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: white;
+    min-height: 300px;
+  }
+  
+  .image-side h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .image-side p {
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.9;
+    line-height: 1.5;
+  }
+
+  /* Lado Derecho: Formulario */
+  .form-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: 800px;
+  }
+
+  h2 { 
+    margin-top: 0; 
+    color: #333; 
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+  }
+
+  .input-group input:focus,
+  .input-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+
+  .input-group input::placeholder {
+    color: #aaa;
+  }
+
+  .input-group select {
+    cursor: pointer;
+    background-color: white;
+  }
+
+  .btn-register {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    touch-action: manipulation;
+  }
+
+  .btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+  }
+
+  .btn-register:active {
+    transform: translateY(0);
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .login-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+
+  .required {
+    color: #e74c3c;
+    margin-left: 3px;
+  }
+
+  .helper-text {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+  }
+
+  .helper-text strong {
+    color: #667eea;
+  }
+
+  .password-hint {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 3px solid #667eea;
+    margin-top: 5px;
+  }
+
+  .password-hint code {
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+  .navbar{
+position: sticky;
+display:flex;
+justify-content:space-between;
+align-items:center;
+top: 10px;
+padding:18px 40px;
+margin:20px;
+background:white;
+border:3px solid #152f85;
+border-radius:20px;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+z-index:1000;
+backdrop-filter: blur(10px);
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+gap:18px;
+align-items:center;
+}
+
+.nav-links a{
+font-size:18px;
+font-weight:600;
+color:#161B22;
+text-decoration:none;
+padding:12px 18px;
+border-radius:50px;
+transition:all 0.3s ease;
+cursor:pointer;
+}
+
+.nav-links a:hover{
+background:#152f85;
+color:white;
+transform:translateY(-2px);
+}
+
+.join a{
+
+background:#7a0cc4;
+color:white;
+padding:12px 22px;
+border-radius:50px;
+}
+
+.join a:hover{
+background:#e100ff;
+transform:scale(1.05);
+}
+
+.logo img{
+height: 80px;
+width:auto;
+cursor:pointer;
+transition:transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo img:hover{
+transform:scale(1.1);
+filter:brightness(1.1);
+
+}
+
+.logo img:active{
+transform:scale(0.96);
+}
+
+
+#menu-toggle{
+display:none;
+}
+
+.menu-icon{
+display:none;
+font-size:30px;
+cursor:pointer;
+color:#152f85;
+}
+
+
+/* Responsive NavBar*/
+@media (max-width:768px){
+
+.menu-icon{
+display:block;
+}
+
+.navbar{
+flex-wrap:wrap;
+gap:10px;
+}
+
+.nav-links{
+
+position:absolute;
+top:100%;
+left:0;
+
+width:100%;
+background:white;
+
+flex-direction:column;
+align-items:center;
+
+max-height:0;
+overflow:hidden;
+
+transition:0.4s;
+
+border-radius:0 0 20px 20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+
+}
+
+#menu-toggle:checked + .menu-icon + .nav-links{
+
+max-height:350px;
+padding:20px 0;
+
+}
+
+}
+  
+  /*Responsibilidad con pantallas pequeñas*/
+  @media (max-width: 768px) {
+    .register-container {
+      flex-direction: column;
+      width: 95%;
+      max-width: 500px;
+      height: auto;
+      min-height: auto;
+      margin: 20px;
+    }
+    
+    .image-side {
+      padding: 30px;
+      min-height: 200px;
+    }
+    
+    .image-side h3 {
+      font-size: 1.5rem;
+    }
+    
+    .image-side p {
+      font-size: 0.9rem;
+    }
+    
+    .form-side {
+      padding: 30px;
+      max-height: none;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    .input-group input,
+    .input-group select {
+      font-size: 16px; /* Evita zoom en iOS */
+    }
+    
+    .btn-register {
+      font-size: 1.1rem;
+      padding: 16px;
+    }
+  }
+
+  
+
+</style>
+</head>
+<body>
+<nav class="navbar">
+    
+  <a href="index.html" class="logo">
+  <img src="Multimedia/logoHW.png" alt="HelloWorld Logo">
+  </a>
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+    ☰
+    </label>
+  <ul class="nav-links">
+
+  <li><a href="historia.html">Historia</a></li>
+  <li><a href="about.html">Quiénes somos</a></li>
+  <li><a href="projects.html">Proyectos</a></li>
+  <li><a href="Miembros.html">Miembros</a></li>
+  <li><a href="EVENTOS.html">Eventos</a></li>
+  <li><a href="QUIZ.html">Quiz interactivo</a></li>
+  <li class="join"><a href="Registro.html">Unirse</a></li>
+
+  </ul>
+
+</nav>
+<div class="register-container">
+  <div class="image-side">
+    <h3>🎓 Registro Institucional</h3>
+    <p>Únete a nuestra comunidad académica y comienza a ganar puntos por tus actividades.</p>
+  </div>
+  
+  <div class="form-side">
+    <h2>Crear Cuenta</h2>
+    <p class="subtitle">Completa tus datos para registrarte</p>
+    
+    <form action="registro.php" method="POST">
+      
+      <!-- Nombre -->
+      <div class="input-group">
+        <label for="nombre">Nombre <span class="required">*</span></label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan" required>
+      </div>
+
+      <!-- Apellidos -->
+      <div class="input-group">
+        <label for="apellidos">Apellidos <span class="required">*</span></label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Ej. Pérez García" required>
+      </div>
+
+      <!-- Carrera -->
+      <div class="input-group">
+        <label for="carrera">Carrera <span class="required">*</span></label>
+        <select id="carrera" name="carrera" required>
+          <option value="">Selecciona tu carrera</option>
+          <option value="ingenieria_sistemas">Ingeniería en Sistemas</option>
+          <option value="ingenieria_industrial">Ingeniería Industrial</option>
+          <option value="administracion">Administración</option>
+          <option value="derecho">Derecho</option>
+          <option value="medicina">Medicina</option>
+          <option value="psicologia">Psicología</option>
+          <option value="contaduria">Contaduría</option>
+          <option value="arquitectura">Arquitectura</option>
+          <option value="otro">Otra</option>
+        </select>
+      </div>
+
+      <!-- Número de Cuenta -->
+      <div class="input-group">
+        <label for="numero_cuenta">Número de Cuenta <span class="required">*</span></label>
+        <input type="text" id="numero_cuenta" name="numero_cuenta" placeholder="Ej. 20241001" required>
+        <span class="helper-text">Número único de estudiante</span>
+      </div>
+
+      <!-- Correo Institucional -->
+      <div class="input-group">
+        <label for="email">Correo Institucional <span class="required">*</span></label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@universidad.edu" required>
+        <span class="helper-text">Solo se aceptan correos institucionales (@edu, @univ, etc.)</span>
+      </div>
+
+      <!-- Contraseña (Fecha en formato AAAAMMDD) -->
+      <div class="input-group">
+        <label for="password">Contraseña <span class="required">*</span></label>
+        <input type="text" id="password" name="password" placeholder="AAAAMMDD" required pattern="[0-9]{8}" maxlength="8">
+        <div class="password-hint">
+          <strong>Formato requerido:</strong> <code>20050115</code> (Año + Mes + Día)
+        </div>
+      </div>
+
+      <!-- Confirmar Contraseña -->
+      <div class="input-group">
+        <label for="confirm_password">Confirmar Contraseña <span class="required">*</span></label>
+        <input type="text" id="confirm_password" name="confirm_password" placeholder="Repite tu contraseña" required pattern="[0-9]{8}" maxlength="8">
+      </div>
+
+      <!-- Botón de Registro -->
+      <button type="submit" class="btn-register">Registrarse</button>
+    </form>
+
+    <div class="login-link">
+      ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Validación de contraseñas
+  document.querySelector('form').addEventListener('submit', function(e) {
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm_password').value;
+    
+    // Validar que contraseñas coincidan
+    if (password !== confirm) {
+      e.preventDefault();
+      alert('Las contraseñas no coinciden');
+      return;
+    }
+    
+    // Validar formato AAAAMMDD
+    const fechaRegex = /^[0-9]{8}$/;
+    if (!fechaRegex.test(password)) {
+      e.preventDefault();
+      alert('La contraseña debe tener formato AAAAMMDD (8 dígitos)');
+      return;
+    }
+    
+    // Validar que sea correo institucional
+    const email = document.getElementById('email').value;
+    const dominiosInstitucionales = ['@edu', '@univ', '@ac', '@school', '@edu.mx', '@edu.ar', '@edu.co'];
+    let esInstitucional = false;
+    for (let dominio of dominiosInstitucionales) {
+      if (email.toLowerCase().includes(dominio)) {
+        esInstitucional = true;
+        break;
+      }
+    }
+    
+    if (!esInstitucional) {
+      e.preventDefault();
+      alert('Solo se aceptan correos institucionales');
+      return;
+    }
+  });
+</script>
+
+</body>
+</html>
