@@ -8,39 +8,48 @@
 <link rel="stylesheet" href="styleRegistro.css">
 </head>
 <body>
-  <!-- Navbar exactamente igual al original -->
+  <!-- Mensajes PHP -->
+  <?php if (isset($error)): ?>
+    <script>alert('<?php echo $error; ?>');</script>
+  <?php endif; ?>
+  
+  <?php if (isset($success)): ?>
+    <script>alert('¡Registro exitoso! Bienvenido a la comunidad'); window.location.href='Miembros.php';</script>
+  <?php endif; ?>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <a href="index.html" class="logo">
-      <img src="Multimedia/logoHW.png" alt="HelloWorld Logo">
+      <img src="Multimedia/About/logoHW.png" alt="HelloWorld Logo">
     </a>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">☰</label>
     <ul class="nav-links">
-      <li><a href="historia.html">Historia</a></li>
-      <li><a href="about.html">Quiénes somos</a></li>
-      <li><a href="projects.html">Proyectos</a></li>
-      <li><a href="Miembros.html">Miembros</a></li>
-      <li><a href="EVENTOS.html">Eventos</a></li>
-      <li><a href="QUIZ.html">Quiz interactivo</a></li>
-      <li class="join"><a href="Registro.html">Unirse</a></li>
-    </ul>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="about.html">Quiénes somos</a></li>
+            <li><a href="projects.html">Proyectos</a></li>
+            <li><a href="Miembros.html">Miembros</a></li>
+            <li><a href="EVENTOS.html">Eventos</a></li>
+            <li><a href="QUIZ.html">Quiz interactivo</a></li>
+            <li class="join"><a href="Registro.html">Unirse</a></li>
+        </ul>
   </nav>
 
-  <!-- Contenido principal con el formulario -->
+  <!-- Contenido principal -->
   <div class="main-content">
     <div class="register-card">
-      <!-- Lado izquierdo: Información visual -->
+      <!-- Lado izquierdo -->
       <div class="left-panel">
         <h3>🎓 ¡Bienvenido!</h3>
-        <p>Forma parte de nuestra comunidad académica y accede a beneficios exclusivos, eventos y networking con profesionales del sector.</p>
+        <p>Forma parte de nuestra comunidad académica y accede a beneficios exclusivos, eventos y networking con profesio.</p>
       </div>
 
-      <!-- Lado derecho: Formulario de registro -->
+      <!-- Lado derecho -->
       <div class="right-panel">
         <h2>Crear cuenta</h2>
         <p class="subtitle">Completa el formulario para registrarte</p>
 
-        <form action="registro.php" method="POST" id="registroForm">
+        <form action="procesar_registro.php" method="POST" id="registroForm">
           <!-- Campo: Nombre -->
           <div class="form-group">
             <label for="nombre">Nombre <span class="required">*</span></label>
@@ -84,7 +93,7 @@
             <span class="helper-text">Usa tu correo institucional (@edu, @univ, etc.)</span>
           </div>
 
-          <!-- Campo: Contraseña (fecha AAAAMMDD) -->
+          <!-- Campo: Contraseña -->
           <div class="form-group">
             <label for="password">Contraseña <span class="required">*</span></label>
             <input type="text" id="password" name="password" placeholder="AAAAMMDD" required pattern="[0-9]{8}" maxlength="8" autocomplete="off">
@@ -107,7 +116,7 @@
         <!-- Enlace a login -->
         <div class="login-redirect">
           ¿Ya tienes una cuenta?
-          <a href="login.html">Inicia sesión aquí</a>
+          <a href="login.php">Inicia sesión aquí</a>
         </div>
       </div>
     </div>
@@ -119,14 +128,12 @@
       const confirmPassword = document.getElementById('confirm_password').value;
       const email = document.getElementById('email').value;
 
-      // Validar que las contraseñas coincidan
       if (password !== confirmPassword) {
         e.preventDefault();
         alert('❌ Las contraseñas no coinciden. Por favor, verifica.');
         return;
       }
 
-      // Validar formato de fecha (8 dígitos numéricos)
       const fechaRegex = /^[0-9]{8}$/;
       if (!fechaRegex.test(password)) {
         e.preventDefault();
@@ -134,7 +141,6 @@
         return;
       }
 
-      // Validar correo institucional
       const dominiosValidos = ['.unam.mx'];
       const emailLower = email.toLowerCase();
       let esValido = false;
@@ -152,7 +158,6 @@
         return;
       }
 
-      // Validar que el correo no esté vacío y tenga formato básico
       if (!email.includes('@') || email.split('@')[1].length < 3) {
         e.preventDefault();
         alert('❌ Por favor, ingresa un correo electrónico válido.');
