@@ -157,7 +157,7 @@ body{
   text-align:center;
   padding:80px 20px;
 
-  background:url("../Multimedia/About/fondo_pag.png");
+  background-image: url("/Multimedia/About/fondo_pag.png");
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
@@ -974,4 +974,5 @@ background:#e100ff;
 transform:scale(1.05);
 
 }
+
 
