@@ -92,7 +92,65 @@ body{
   transform:scale(0.96);
 }
 
+/* ================= HERO ================= */
 
+.hero{
+  height:90vh;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-image: linear-gradient(rgba(1, 5, 35, 0.5), rgba(21, 1, 156, 0.5)),
+      url("Multimedia/About/fondo_pag.png");
+  
+  
+}
+
+/* contenido central */
+
+.hero-content{
+  position:relative;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("Multimedia/Projects/proyecto_principal.png");
+  background-size:cover;
+  background-position:center;
+
+  padding:40px 60px;
+  color: white;
+  border-radius:20px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+  max-width:500px;
+}
+
+.hero-btn{
+  display:inline-block;
+  margin-top:20px;
+
+  background:#7a0cc4;
+  color:white;
+
+  padding:14px 30px;
+  border-radius:50px;
+
+  font-weight:bold;
+  text-decoration:none;
+
+  transition:all 0.3s ease;
+}
+
+.hero-btn:hover{
+  background:#e100ff;
+  transform:scale(1.08);
+}
 /* ================= ABOUT SECTION ================= */
 
 .about{
@@ -916,3 +974,4 @@ background:#e100ff;
 transform:scale(1.05);
 
 }
+
