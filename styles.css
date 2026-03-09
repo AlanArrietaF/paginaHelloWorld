@@ -540,4 +540,63 @@ body{
     font-size:34px;
   }
 
-}
+  /* Estilos del Footer */
+.site-footer {
+    background: #FFFFFF; /* Fondo blanco */
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil oscuro */
+    padding: 60px 20px 20px;
+    margin-top: 100px;
+    color: #0D1117; /* Texto principal oscuro para que se lea */
+  }
+  
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-brand h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0D1117; /* Título oscuro */
+  }
+  
+  .tagline {
+    color: #4B5563; /* Gris oscuro para el subtítulo */
+    margin-top: 10px;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .social-link {
+    color: #1F2937; /* Enlaces en gris muy oscuro */
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  .social-link:hover {
+    color: var(--tech-blue); /* Al pasar el mouse sigue siendo azul tecnológico */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea divisoria oscura */
+  }
+  
+  .final-phrase {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #0D1117;
+  }
+
