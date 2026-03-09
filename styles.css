@@ -539,6 +539,7 @@ body{
   .stat h2{
     font-size:34px;
   }
+}
 
   /* Estilos del Footer */
 .site-footer {
@@ -599,4 +600,7 @@ body{
     font-weight: 500;
     color: #0D1117;
   }
+
+
+
 
