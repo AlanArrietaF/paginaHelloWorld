@@ -539,64 +539,148 @@ body{
   .stat h2{
     font-size:34px;
   }
+} 
 
-  /* Estilos del Footer */
+
+/* ESTILOS DEL FOOTER   */
+
 .site-footer {
-    background: #FFFFFF; /* Fondo blanco */
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil oscuro */
-    padding: 60px 20px 20px;
-    margin-top: 100px;
-    color: #0D1117; /* Texto principal oscuro para que se lea */
-  }
-  
-  .footer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  
-  .footer-brand h2 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: #0D1117; /* Título oscuro */
-  }
-  
-  .tagline {
-    color: #4B5563; /* Gris oscuro para el subtítulo */
-    margin-top: 10px;
-  }
-  
-  .footer-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .social-link {
-    color: #1F2937; /* Enlaces en gris muy oscuro */
-    text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    transition: color 0.3s;
-  }
-  
-  .social-link:hover {
-    color: var(--tech-blue); /* Al pasar el mouse sigue siendo azul tecnológico */
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Línea divisoria oscura */
-  }
-  
-  .final-phrase {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #0D1117;
-  }
+  background: #FFFFFF; 
+  border-top: 1px solid rgba(0, 0, 0, 0.1); 
+  padding: 60px 20px 20px;
+  margin-top: 100px;
+  color: #0D1117; 
+}
 
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-brand h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #0D1117; 
+}
+
+.tagline {
+  color: #4B5563; 
+  margin-top: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  color: #1F2937; 
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+.social-link:hover {
+  color: #3B82F6; 
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); 
+}
+
+.final-phrase {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #0D1117;
+}
+
+/* FACTOR WOW: EASTER EGG SCRIPT        */
+
+#wow-easter-egg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 17, 23, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  color: #00FF9C;
+  backdrop-filter: blur(8px);
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+
+.terminal-egg {
+  background: #000000;
+  border: 1px solid rgba(0, 255, 156, 0.3);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 40px rgba(0, 255, 156, 0.15);
+  max-width: 600px;
+  width: 90%;
+  text-align: left;
+}
+
+.terminal-egg p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #00FF9C;
+  white-space: nowrap;
+  letter-spacing: .1em;
+  animation: typing 1.5s steps(30, end), blink-caret .5s step-end infinite;
+}
+
+.fade-in-1 { animation: fadeInText 0.5s ease-in-out 1.5s both; }
+.fade-in-2 { animation: fadeInText 0.5s ease-in-out 2.5s both; }
+.fade-in-3 { animation: fadeInText 0.5s ease-in-out 3.5s both; }
+
+.secret-cta {
+  background: #00FF9C;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-right: 15px;
+}
+
+.secret-cta.outline {
+  background: transparent;
+  color: #00FF9C;
+  border: 1px solid #00FF9C;
+}
+
+.secret-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 156, 0.3);
+}
+
+.secret-cta.outline:hover {
+  background: rgba(0, 255, 156, 0.1);
+}
+
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00FF9C; } }
+@keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeInText { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
