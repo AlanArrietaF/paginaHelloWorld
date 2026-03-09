@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVENTOS - Hello World</title>
+    <title>EVENTOS | HelloWorld</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         :root { --primary: #2462bf; --accent: #ffcc00; --dark: #0d2c5e; }
         
-        /* Ajuste para que el contenido no quede oculto bajo la Nav Bar sticky */
+        /* Ajustes específicos para la sección de calendario */
         body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: var(--primary); color: white; }
         
         #seccion-eventos { padding: 100px 20px 60px; text-align: center; }
@@ -39,40 +39,17 @@
             background: white; color: #333; padding: 20px; border-radius: 15px;
             text-align: left; border-left: 6px solid var(--accent);
         }
-
-        /* Estilos del Footer adaptados */
-        .main-footer {
-            background-color: white; padding: 40px 20px; border-top: 3px solid #152f85;
-            margin-top: 60px; color: #161B22;
-        }
-        .footer-content {
-            max-width: 1000px; margin: 0 auto; display: flex;
-            flex-wrap: wrap; justify-content: space-between; align-items: center;
-        }
-        .footer-logo { font-family: 'Impact', sans-serif; font-size: 2rem; color: #152f85; margin: 0; }
-        .footer-links a { text-decoration: none; color: #161B22; font-weight: 600; margin-left: 20px; }
-        .footer-bottom { text-align: center; margin-top: 30px; color: #6c757d; font-size: 0.8rem; }
-        .hw-highlight { color: #28a745; font-weight: bold; }
     </style>
 </head>
 <body>
- <!-- ================= NAVBAR ================= -->
-  <nav class="navbar">
 
-    <!-- Logo que redirige al inicio -->
-    <a href="index.html" class="logo">
-      <img src="Multimedia/About/logoHW.png" alt="HelloWorld Logo">
-    </a>
-
-    <!-- Checkbox usado para activar el menú responsive -->
-    <input type="checkbox" id="menu-toggle">
-
-    <!-- Icono hamburguesa visible en móviles -->
-    <label for="menu-toggle" class="menu-icon">
-      ☰
-    </label>
-
-  <ul class="nav-links">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="Multimedia/About/logoHW.png" alt="HelloWorld Logo">
+        </a>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <ul class="nav-links">
             <li><a href="historia.html">Historia</a></li>
             <li><a href="about.html">Quiénes somos</a></li>
             <li><a href="projects.html">Proyectos</a></li>
@@ -81,8 +58,8 @@
             <li><a href="QUIZ.html">Quiz interactivo</a></li>
             <li class="join"><a href="Registro.html">Unirse</a></li>
         </ul>
+    </nav>
 
-  </nav>
     <section id="seccion-eventos">
         <h2 class="impact-title">EVENTOS</h2>
         <p style="margin-bottom: 60px; color: #e1d9d9;">Descubre algunas de las actividades disponibles en este mes</p>
@@ -98,25 +75,28 @@
         <div class="event-info-grid" id="event-list"></div>
     </section>
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div>
-                <h2 class="footer-logo">> HelloWorld_</h2>
-                <p style="color: #6c757d; font-size: 0.9rem;">La primera línea de algo grande.</p>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2 class="mono-text">> HelloWorld_</h2>
+                <p class="tagline">La primera línea de algo grande.</p>
             </div>
+            
             <div class="footer-links">
-                <a href="#">GitHub</a>
-                <a href="#">Discord</a>
-                <a href="#">Instagram</a>
-                <a href="#">Contacto</a>
+                <a href="https://github.com/HelloWorldClub" target="_blank" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Discord</a>
+                <a href="#" class="social-link">Instagram</a>
+                <a href="mailto:contacto@helloworld.com" class="social-link">Contacto</a>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            Todo empieza con un <span class="hw-highlight">Hello World</span>. En este club, es donde empieza tu impacto.
+            <p class="final-phrase">Todo empieza con un <span class="highlight">Hello World</span>. En este club, es donde empieza tu impacto.</p>
         </div>
     </footer>
 
     <script>
+        // Lógica de Renderizado del Calendario
         const eventsData = [
             { day: 10, month: 2, title: "Workshop de React", desc: "Aprende bases de desarrollo moderno.", type: "WORKSHOP" },
             { day: 25, month: 2, title: "Hackathon Interno", desc: "12 horas de competencia y pizza.", type: "COMPETENCIA" },
@@ -166,8 +146,8 @@
                 calendarMesh.appendChild(dayDiv);
             }
         }
+
         renderCalendar();
     </script>
 </body>
 </html>
-
