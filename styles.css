@@ -684,3 +684,235 @@ body{
 @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #00FF9C; } }
 @keyframes fadeInOverlay { from { opacity: 0; } to { opacity: 1; } }
 @keyframes fadeInText { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ================= Seccion PROJECTS================= */
+
+/* ================= PROJECTS HERO ================= */
+
+.projects-hero{
+
+text-align:center;
+padding:100px 20px;
+
+background:linear-gradient(180deg,#152f85,#070629);
+color:white;
+
+}
+
+.projects-hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.projects-hero p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+opacity:0.9;
+}
+
+
+/* ================= MAIN PROJECT ================= */
+
+.main-project{
+    background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("Multimedia/Projects/proyecto_principal.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding:80px 60px;
+    border-radius:40px;
+    margin:40px;
+
+}
+
+.main-project h2{
+  color:#152f85;
+  font-size: 60px;
+  -webkit-text-stroke: 2px white;
+}
+
+.main-project h3{
+  color:#152f85;
+  font-size: 30px;
+}
+
+.main-project p{
+  font-size: 22px;
+
+}
+
+.main-project-card{
+
+max-width:700px;
+margin:auto;
+
+background:rgba(255,255,255,0.85); 
+padding:40px;
+
+border-radius:14px;
+
+border:2px solid #3B82F6;
+
+}
+
+
+/* ================= HACKATHONS ================= */
+
+.hackathons{
+  background:
+    url("Multimedia/About/fondo_pag.png");
+
+  padding:60px 40px;
+  position:relative;
+
+}
+.hack-title{
+  color: #3144f1;
+  font-size: 35px;
+  text-align: center;
+}
+
+.hack-desc{
+  font-size: 12px;
+  text-align: center;
+  padding-left: 10px;
+}
+.hackathon-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+margin-top:40px;
+
+}
+.hack-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+border:2px solid #3B82F6;
+
+transition:0.3s;
+
+}
+
+.hack-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+background-color: #a855f7;
+color: #f8fafc;
+
+}
+
+.hack-card span{
+
+display:block;
+margin-top:10px;
+
+font-size:14px;
+opacity:0.8;
+
+}
+
+.detalles h3{
+  font-size: 12px;
+  text-align: center;
+}
+
+
+/* ================= IDEAS ================= */
+
+.project-ideas{
+
+padding:80px 20px;
+text-align:center;
+background:
+  url("Multimedia/About/fondo_pag.png");
+
+}
+
+.ideas-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.idea-card{
+
+background:white;
+
+padding:25px;
+
+border-radius:12px;
+
+border:2px solid #7a0cc4;
+
+transition:0.3s;
+
+}
+
+.idea-card:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+
+/* ================= CTA ================= */
+
+.projects-cta{
+
+padding:100px 20px;
+
+text-align:center;
+
+background:linear-gradient(180deg,#070629,#152f85);
+color:white;
+
+}
+
+.cta-btn{
+
+display:inline-block;
+
+margin-top:20px;
+
+background:#7a0cc4;
+color:white;
+
+padding:14px 30px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:0.3s;
+
+}
+
+.cta-btn:hover{
+
+background:#e100ff;
+transform:scale(1.05);
+
+}
